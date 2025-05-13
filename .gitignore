@@ -1,0 +1,8 @@
+# Ignore system files
+.DS_Store
+
+# Ignore sensitive or unnecessary files
+.env
+*.log
+node_modules/
+vendor/

@@ -1,0 +1,280 @@
+/* Global styles */
+html, body {
+  height: 100%; /* Ensures the body takes the full height of the viewport */
+  margin: 0; /* Remove default margin */
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+/* Hero Section for all pages */
+.hero, .hero-reviews, .hero-shopping {
+  display: flex;
+  justify-content: center;  /* Horizontally center content */
+  align-items: center;      /* Vertically center content */
+  text-align: center;       /* Center text */
+  padding: 100px 0;
+  background-size: cover;  /* Ensures the background image covers the entire area */
+  background-position: center center;  /* Keeps the background image centered */
+  background-repeat: no-repeat; /* Prevents repeating background */
+  color: white;
+  height: 50vh; /* The height is 50% of the viewport height */
+  min-height: 400px; /* Prevent sections from shrinking too much */
+  max-height: 800px; /* Prevent sections from growing too large */
+  overflow: hidden; /* Prevent any overflow from disrupting the layout */
+}
+
+/* Specific background images for different pages */
+.hero {
+  background-image: url('images/three-guitars.jpg');
+}
+
+.hero-reviews {
+  background-image: url('images/guitar-sits-wooden-floor-with-musical-instrument-left.jpg');
+}
+
+.hero-shopping {
+  background-image: url('images/rustic-guitar.jpg');
+}
+
+/* Responsive hero section text */
+.hero h1, .hero-reviews h1, .hero-shopping h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p, .hero-reviews p, .hero-shopping p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Make sure hero sections look good on small screens */
+@media (max-width: 768px) {
+  .hero h1, .hero-reviews h1, .hero-shopping h1 {
+    font-size: 2.5rem; /* Smaller font size on small screens */
+  }
+
+  .hero p, .hero-reviews p, .hero-shopping p {
+    font-size: 1.2rem; /* Smaller text on small screens */
+  }
+
+  .hero, .hero-reviews, .hero-shopping {
+    padding: 20px 0; /* Reduce padding for smaller screens */
+    height: 40vh; /* Set height to 40% of the viewport height */
+    min-height: 190px; /* Adjust the minimum height for smaller screens */
+  }
+
+  /* Adjusting image in cards */
+  .card-img-top {
+    width: 100%; /* Make the image take up the full width */
+    height: 100%; /* Make sure the height takes up the full card height */
+    object-fit: cover; /* Make sure the image covers the whole area without distorting */
+    object-position: center center; /* Center the image */
+  }
+
+  /* Adjusting card layout and content */
+  .shopping-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-body {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  /* Adjust form layout */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  /* Make sure quantity input and button are closer to the item */
+  form input[type="number"] {
+    margin-bottom: 5px; /* Reduced space between input and button */
+    width: 60px; /* Adjust input width */
+    padding: 5px; /* Padding for the input */
+    margin-top: -10px;
+  }
+
+  form button {
+    margin-top: 0px; /* Reduced space above the button */
+    padding: 8px 16px; /* Adjust button padding */
+    font-size: 14px; /* Slightly smaller font size */
+  }
+}
+
+/* Medium and larger screens: add space between the number input and the button */
+@media (min-width: 768px) {
+  form input[type="number"] {
+    margin-right: 10px; /* Add space between number input and the button */
+  }
+
+  form button {
+    margin-top: 0px; /* Ensure space is maintained between input and button */
+  }
+}
+
+/* Ensure images are responsive and maintain aspect ratio */
+img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.col-md-5 {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+.small-image-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.small-image-text img {
+  width: 200px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.small-image-text p {
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Additional styling for larger screens */
+@media screen and (min-width: 1200px) {
+  .hero h1, .hero-reviews h1, .hero-shopping h1 {
+    font-size: 5rem; /* Larger font size on larger screens */
+  }
+
+  .hero p, .hero-reviews p, .hero-shopping p {
+    font-size: 1.8rem; /* Larger font size for paragraphs */
+  }
+
+  /* Allow sections to grow dynamically */
+  .hero, .hero-reviews, .hero-shopping {
+    height: 50vh; /* 50% of the viewport height */
+    min-height: 300px; /* Ensure a minimum height */
+    max-height: 350px; /* Maximum height */
+  }
+}
+
+/* NEW ADDITION FOR SHOPPING PAGE */
+.gallery .shopping-item {
+  margin-bottom: 30px; /* Spacing between items */
+}
+
+/* Make the product cards take full width on small screens */
+@media (max-width: 768px) {
+  .shopping-item {
+    display: flex;
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center; /* Center the content */
+    text-align: center; /* Ensure all content is centered */
+  }
+
+  .card-body {
+    text-align: center; /* Center the text inside the card */
+    padding-bottom: 10px; /* Remove extra padding from the bottom */
+  }
+
+  .card-img-top {
+    width: 100%; /* Make sure the image spans the full width */
+    height: 100%; /* Ensures the image takes full height */
+    object-fit: cover; /* Fill the area of the image container without distortion */
+    margin-bottom: 0px; /* Reduced space between image and text */
+  }
+
+  /* Adjust the "Add to Cart" section */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form content */
+    margin-top: 0; /* Remove any top margin */
+  }
+
+  /* Make sure quantity input and button are closer to the item */
+  form input[type="number"] {
+    margin-bottom: 5px; /* Reduced space between input and button */
+    width: 60px; /* Adjust input width */
+    padding: 5px; /* Padding for the input */
+    margin-top: -10px;
+  }
+
+  form button {
+    margin-top: 0px; /* Reduced space above the button */
+    padding: 8px 16px; /* Adjust button padding */
+    font-size: 14px; /* Slightly smaller font size */
+  }
+}
+
+/* Center the View Cart button and make it smaller */
+a.btn.btn-secondary {
+  display: inline-block;        /* Ensures the button is treated like an inline element */
+  margin: 20px auto;            /* Centers the button horizontally with a 20px top and bottom margin */
+  padding: 12px 30px;           /* Smaller padding for the button (adjust left-right padding) */
+  font-size: 16px;              /* Adjust font size to make the text slightly smaller */
+  text-align: center;           /* Ensures the text is centered inside the button */
+  width: auto;                  /* Automatically adjusts the button width based on its content */
+  text-decoration: none;        /* Removes underline from the link */
+  display: block;               /* Makes the link behave as a block-level element */
+}
+
+/* Ensure the container is full width and the button is centered */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto; /* Ensures the footer stays at the bottom */
+}
+
+/* Remove bottom padding for .about section (Instruction and Information) */
+.about {
+  padding-bottom: 0;  /* Remove bottom padding to bring the next section closer */
+}
+
+/* Reduce the margin between the two sections */
+.about + .gallery {
+  margin-top: -6rem; /* Use negative margin to bring the sections closer */
+}
+
+/* Optional: Adjust the padding within the gallery to reduce space */
+.gallery {
+  padding-top: 1rem; /* Reduce space above the gallery */
+}
+
+/* Ensure email input field takes full width on small screens */
+@media (max-width: 768px) {
+  .contact .form-control {
+    width: 100% !important; /* Force the input field to take 100% width */
+  }
+}
